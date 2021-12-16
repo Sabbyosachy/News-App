@@ -20,14 +20,22 @@ class Trending extends React.Component {
     
     render() { 
         return (
-            <View style={{marginTop:5}}>
+            <View style={{marginTop:15,marginVertical:10}}>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 {this.state.news.map((news, index) => (
-                  <View key={index} style={{margin: 10,backgroundColor:'white',padding:7,borderRadius:17}}>
-                    <Image source={{uri: `${news.urlToImage}`}} style={{height: 200, width: 300, borderRadius: 12}}/>
-                    <Text style={{width: 290, textAlign: 'justify',marginTop:5,marginLeft:5}}>
+                  <View style={{margin: 10,backgroundColor:'white',padding:7,borderRadius:17,elevation: 4}}>
+                    <Image source={{uri: `${news.urlToImage}`}} style={{height: 200, width: 210, borderRadius: 12}}/>
+                    <Text style={{width: 200, textAlign: 'justify',marginTop:5,marginLeft:5}}>
                       {news.title}
                     </Text>
+                    <TouchableOpacity>
+                        <Text style={{backgroundColor:'#2b2b2b',color:'white',padding:20,textAlign:'center',fontWeight:'bold'}}  key={index}
+                  onPress={() =>
+                    this.props.navigation.navigate('WebView', {
+                      url: news.url,
+                    })
+                  }>Learn More</Text>
+                        </TouchableOpacity>
                   </View>
                 ))}
               </ScrollView>
