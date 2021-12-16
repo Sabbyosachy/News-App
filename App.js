@@ -14,7 +14,7 @@ function App() {
   return (
       <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Trending" component={Home} />
+        <Stack.Screen name="News24" component={Home} />
         <Stack.Screen name='GetNews' component={Getnews} />
         <Stack.Screen name='WebView' component={WebviewCompo} options={{ headerShown: false }} />
       </Stack.Navigator>

@@ -23,13 +23,13 @@ class Trending extends React.Component {
             <View style={{marginTop:5,marginVertical:5}}>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 {this.state.news.map((news, index) => (
-                  <View style={{margin: 10,backgroundColor:'white',padding:7,borderRadius:17,elevation: 4}}>
-                    <Image source={{uri: `${news.urlToImage}`}} style={{height: 200, width: 210, borderRadius: 12}}/>
+                  <View style={{margin:7,backgroundColor:'white',padding:7,borderRadius:17,elevation: 4}}>
+                    <Image source={{uri: `${news.urlToImage}`}} style={{height: 163, width: 210, borderRadius: 12}}/>
                     <Text style={{width: 200, textAlign: 'justify',marginTop:5,marginLeft:5}}>
                       {news.title}
                     </Text>
                     <TouchableOpacity>
-                        <Text style={{backgroundColor:'#2b2b2b',color:'white',padding:20,textAlign:'center',fontWeight:'bold',bottom:0,borderRadius:10}}  key={index}
+                        <Text style={{backgroundColor:'#2b2b2b',color:'white',padding:10,textAlign:'center',marginTop:7,fontWeight:'bold',bottom:0,borderRadius:10}}  key={index}
                   onPress={() =>this.props.navigation.navigate('WebView', {url: news.url,})}>
                     Learn More</Text>
                     </TouchableOpacity>

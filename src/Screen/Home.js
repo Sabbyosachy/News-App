@@ -27,7 +27,7 @@ class Home extends React.Component {
               <Categories navigation={this.props.navigation}/>
                 <Trending navigation={this.props.navigation}/>
               </View>
-              <View style={{alignItems: 'center',backgroundColor:'#2b2b2b'}}>
+              <View style={{alignItems: 'center',backgroundColor:'#2b2b2b',marginBottom:10}}>
         {this.state.news.length === 0 ? (
           <ActivityIndicator
             style={{
@@ -54,11 +54,11 @@ class Home extends React.Component {
                     }}>
                     <Image
                       source={{uri: `${news.urlToImage}`}}
-                      style={{height: 200, width: 360, borderRadius: 10}}
+                      style={{height: 200, width: 320, borderRadius: 10}}
                     />
                     <Text
                       style={{
-                        width:360,
+                        width:320,
                         padding:5,
                         fontWeight:'bold',
                         textAlign:'justify'
@@ -67,8 +67,9 @@ class Home extends React.Component {
                     </Text>
                     <Text
                       style={{
-                        width:360,
+                        width:320,
                         padding:5,
+                        fontSize:10,
                         textAlign:'justify'
                       }}>
                       {news.description}
