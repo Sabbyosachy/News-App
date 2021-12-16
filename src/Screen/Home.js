@@ -23,58 +23,71 @@ class Home extends React.Component {
     render() { 
         return (
             <View style={styles.home}>
-                <Categories navigation={this.props.navigation}/>
+              <View>
+              <Categories navigation={this.props.navigation}/>
                 <Trending navigation={this.props.navigation}/>
-                {/* <View style={{alignItems: 'center'}}>
-          {this.state.news.length === 0 ? (
-            <View
+              </View>
+              <View style={{alignItems: 'center',backgroundColor:'#2b2b2b'}}>
+        {this.state.news.length === 0 ? (
+          <ActivityIndicator
             style={{
+              height: deviceHeight,
               width: deviceWidth,
-              height:deviceHeight,
               alignItems: 'center',
               justifyContent: 'center',
-            }}>
-            <ActivityIndicator color="black" size="large" />
-          </View>
-          ) : (
-            <ScrollView showsVerticalScrollIndicator={false}>
-              {this.state.news.map((news, index) =>
-                news.urlToImage ? (
-                  <TouchableOpacity
-                    key={index}
-                    onPress={() =>
-                      this.props.navigation.navigate('WebView', {
-                        url: news.url,
-                      })
-                    }>
-                    <View
+            }}
+            size="large"
+            color="black"
+          />
+        ) : (
+          <ScrollView showsVerticalScrollIndicator={false}>
+            {this.state.news.map((news, index) =>
+              news.urlToImage ? (
+                
+                  <View
+                    style={{
+                      backgroundColor: 'white',
+                      borderRadius: 10,
+                      elevation: 4,
+                      padding:10,
+                      marginVertical: 7,
+                    }}>
+                    <Image
+                      source={{uri: `${news.urlToImage}`}}
+                      style={{height: 200, width: 360, borderRadius: 10}}
+                    />
+                    <Text
                       style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        backgroundColor: 'white',
-                        borderRadius: 10,
-                        elevation: 4,
-                        width: deviceWidth - 30,
-                        marginVertical: 7,
+                        width:360,
+                        padding:5,
+                        fontWeight:'bold',
+                        textAlign:'justify'
                       }}>
-                      <Image
-                        source={{uri: `${news.urlToImage}`}}
-                        style={{height: 100, width: 100, borderRadius: 10}}
-                      />
-                      <Text
-                        style={{
-                          width:deviceWidth - 130,
-                          padding:5,
-                        }}>
-                        {news.title}
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                ) : null,
-              )}
-            </ScrollView>
-          )}
-        </View> */}
+                      {news.title}
+                    </Text>
+                    <Text
+                      style={{
+                        width:360,
+                        padding:5,
+                        textAlign:'justify'
+                      }}>
+                      {news.description}
+                    </Text>
+                    <TouchableOpacity>
+                        <Text style={{backgroundColor:'#2b2b2b',borderRadius:10,color:'white',padding:20,textAlign:'center',fontWeight:'bold'}}  key={index}
+                  onPress={() =>
+                    this.props.navigation.navigate('WebView', {
+                      url: news.url,
+                    })
+                  }>Learn More</Text>
+                        </TouchableOpacity>
+                  </View>
+            
+              ) : null,
+            )}
+          </ScrollView>
+        )}
+      </View>
             </View>
         )
     }

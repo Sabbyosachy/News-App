@@ -69,7 +69,7 @@ class Getnews extends React.Component {
                       {news.description}
                     </Text>
                     <TouchableOpacity>
-                        <Text style={{backgroundColor:'#2b2b2b',color:'white',padding:20,textAlign:'center',fontWeight:'bold'}}  key={index}
+                        <Text style={{backgroundColor:'#2b2b2b',borderRadius:10,color:'white',padding:20,textAlign:'center',fontWeight:'bold'}}  key={index}
                   onPress={() =>
                     this.props.navigation.navigate('WebView', {
                       url: news.url,

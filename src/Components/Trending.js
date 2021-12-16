@@ -20,7 +20,7 @@ class Trending extends React.Component {
     
     render() { 
         return (
-            <View style={{marginTop:15,marginVertical:10}}>
+            <View style={{marginTop:5,marginVertical:5}}>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 {this.state.news.map((news, index) => (
                   <View style={{margin: 10,backgroundColor:'white',padding:7,borderRadius:17,elevation: 4}}>
@@ -29,13 +29,10 @@ class Trending extends React.Component {
                       {news.title}
                     </Text>
                     <TouchableOpacity>
-                        <Text style={{backgroundColor:'#2b2b2b',color:'white',padding:20,textAlign:'center',fontWeight:'bold'}}  key={index}
-                  onPress={() =>
-                    this.props.navigation.navigate('WebView', {
-                      url: news.url,
-                    })
-                  }>Learn More</Text>
-                        </TouchableOpacity>
+                        <Text style={{backgroundColor:'#2b2b2b',color:'white',padding:20,textAlign:'center',fontWeight:'bold',bottom:0,borderRadius:10}}  key={index}
+                  onPress={() =>this.props.navigation.navigate('WebView', {url: news.url,})}>
+                    Learn More</Text>
+                    </TouchableOpacity>
                   </View>
                 ))}
               </ScrollView>
