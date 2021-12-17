@@ -9,7 +9,7 @@ const deviceWidth = Dimensions.get('window').width;
 class Home extends React.Component {
     state = {news: []};
     componentDidMount() {
-        fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=df1b613c4dea49b98ee483073f2bd86f`)
+        fetch(`https://newsapi.org/v2/everything?q=Apple&from=2021-12-17&sortBy=popularity&apiKey=df1b613c4dea49b98ee483073f2bd86f`)
           .then(res => res.json())
           .then(response => {
             this.setState({
