@@ -68,6 +68,10 @@ class Getnews extends React.Component {
                       }}>
                       {news.description}
                     </Text>
+                    <View>
+                      <Text style={{fontWeight:'bold',fontSize:13}}>{news.author}</Text>
+                      <Text style={{marginBottom:10}}>{news.publishedAt}</Text>
+                    </View>
                     <TouchableOpacity>
                         <Text style={{backgroundColor:'#2b2b2b',borderRadius:10,color:'white',padding:20,textAlign:'center',fontWeight:'bold'}}  key={index}
                   onPress={() =>

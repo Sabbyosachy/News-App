@@ -1,5 +1,5 @@
 import React ,{Component} from 'react';
-import { View, Text, ScrollView,TouchableOpacity,Image,ActivityIndicator} from 'react-native';
+import { View, Text, ScrollView,TouchableOpacity,Image} from 'react-native';
 
 
 
@@ -23,7 +23,7 @@ class Trending extends React.Component {
             <View style={{marginTop:5,marginVertical:5}}>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 {this.state.news.map((news, index) => (
-                  <View style={{margin:7,backgroundColor:'white',padding:7,borderRadius:17,elevation: 4}}>
+                  <View style={{margin:7,backgroundColor:'white',padding:5,borderRadius:17,elevation: 4}}>
                     <Image source={{uri: `${news.urlToImage}`}} style={{height: 163, width: 210, borderRadius: 12}}/>
                     <Text style={{width: 200, textAlign: 'justify',marginTop:5,marginLeft:5}}>
                       {news.title}
